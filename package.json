@@ -14,7 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "np:publish": "git push origin master && np --no-tests --no-2fa",
-    "test": "tsdx test",
+    "test": "npx tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -44,6 +44,16 @@
       "path": "dist/temp.esm.js",
       "limit": "10 KB"
     }
+  ],
+  "keywords": [
+    "ts",
+    "typescript",
+    "nodejs",
+    "js",
+    "javascript",
+    "stripe",
+    "VAT",
+    "TAX"
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^6.0.3",
