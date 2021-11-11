@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "np:publish": "git push origin master && np",
+    "np:publish": "git push origin master && np --no-2fa",
     "test": "npx tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
