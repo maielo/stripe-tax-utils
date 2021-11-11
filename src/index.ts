@@ -35,12 +35,7 @@ export default {
     // first search by country (one country can have multiple taxIds)
     const dataList = stripeTaxMap.filter(({ country: c }) => c?.toLowerCase() === country.toLowerCase());
 
-    // its found by country alone and does not need to be searched by taxId
-    if ( dataList.length === 1 ) {
-      return dataList[0];
-    }
-
-    if ( dataList.length > 1 ) {
+    if ( dataList.length >= 1 ) {
 
       const t = dataList.filter((item) => {
 

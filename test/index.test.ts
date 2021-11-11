@@ -36,4 +36,16 @@ describe('stripe tax utils', () => {
       example: 'GB123456789'
     });
   });
+
+  it('Should return null if not found', () => {
+
+    const type = stripeTax.getTaxItem({ country: 'GB', taxId: 'asdasdasd' });
+    expect(type).toBe(null);
+  });
+
+  it('Should return null if not valid country supplied', () => {
+
+    const type = stripeTax.getTaxItem({ country: 'xxx', taxId: 'GB123456789' });
+    expect(type).toBe(null);
+  });
 });
