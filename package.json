@@ -32,16 +32,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "temp",
+  "name": "stripe-tax-utils",
   "author": "Maielo",
-  "module": "dist/temp.esm.js",
+  "module": "dist/stripe-tax-utils.esm.js",
   "size-limit": [
     {
-      "path": "dist/temp.cjs.production.min.js",
+      "path": "dist/stripe-tax-utils.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/temp.esm.js",
+      "path": "dist/stripe-tax-utils.esm.js",
       "limit": "10 KB"
     }
   ],
