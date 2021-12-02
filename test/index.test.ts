@@ -1,6 +1,23 @@
 import stripeTax from '../src/index';
 
 describe('stripe tax utils', () => {
+  it('There should be no duplicate items', () => {
+    const items = stripeTax.getMap();
+    for (const item of items) {
+      const found = items.filter(
+        x =>
+          x.country === item.country &&
+          x.regex.toString() === item.regex.toString()
+      );
+      try {
+        expect(found.length).toBe(1);
+      } catch (error) {
+        console.log(found);
+        throw error;
+      }
+    }
+  });
+
   it('Should return correct stripe type for manually defined tax id and country', () => {
 
     const type = stripeTax.getStripeType({ country: 'GB', taxId: 'GB123456789' });

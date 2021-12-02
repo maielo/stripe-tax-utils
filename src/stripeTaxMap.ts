@@ -445,14 +445,6 @@ export default [
   },
 
   {
-    country: "TH",
-    type: "ae_trn",
-    description: "United Arab Emirates TRN",
-    regex: /^[0-9]{13}$/,
-    example: "1234567891234",
-  },
-
-  {
     country: "GB",
     type: "gb_vat",
     description: "United Kingdom VAT number",
