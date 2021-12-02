@@ -142,13 +142,6 @@ export default [
     example: "DE123456789",
   },
   {
-    country: "DE",
-    type: "eu_vat",
-    description: "Germany - European VAT number",
-    regex: /^DE[0-9]{9}$/,
-    example: "DE123456789",
-  },
-  {
     country: "GR",
     type: "eu_vat",
     description: "Greece - European VAT number",
