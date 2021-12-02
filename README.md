@@ -2,8 +2,6 @@
 
 Returns Stripe type for supplied tax id and country
 
-
-
 ### Install
 
 ```
@@ -16,8 +14,14 @@ npm i stripe-tax-utils
 import stripeTaxUtils from 'stripe-tax-utils';
 
 // get stripe type
-const type = stripeTaxUtils.getStripeType({ country: 'GB', taxId: 'GB123456789' });
-const type2 = stripeTaxUtils.getStripeType({ country: 'gb', taxId: 'XI123456789' });
+const type = stripeTaxUtils.getStripeType({
+  country: 'GB',
+  taxId: 'GB123456789',
+});
+const type2 = stripeTaxUtils.getStripeType({
+  country: 'gb',
+  taxId: 'XI123456789',
+});
 
 console.log(type); // gb_vat
 console.log(type2); // eu_vat
@@ -26,7 +30,10 @@ console.log(type2); // eu_vat
 const map = stripeTaxUtils.getMap();
 
 // get one type
-const typeObj = stripeTaxUtils.getTaxItem({ country: 'GB', taxId: 'GB123456789' });
+const typeObj = stripeTaxUtils.getTaxItem({
+  country: 'GB',
+  taxId: 'GB123456789',
+});
 
 console.log(typeObj);
 // {
@@ -39,4 +46,3 @@ console.log(typeObj);
 ```
 
 ### Licence MIT
-

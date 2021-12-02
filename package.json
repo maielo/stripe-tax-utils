@@ -15,10 +15,12 @@
     "build": "tsdx build",
     "np:publish": "git push origin master && np --no-2fa --no-tests",
     "test": "npx tsdx test --watch",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint && npm run fix:prettier",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "lint:prettier": "prettier . --ignore-path=.eslintignore --list-different",
+    "fix:prettier": "npm run lint:prettier -- --write"
   },
   "peerDependencies": {},
   "husky": {
@@ -59,6 +61,7 @@
     "@size-limit/preset-small-lib": "^6.0.3",
     "@types/jest": "^27.0.2",
     "husky": "^7.0.2",
+    "prettier": "^2.5.0",
     "size-limit": "^6.0.3",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
