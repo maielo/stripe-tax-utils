@@ -2,11 +2,16 @@
   "version": "1.0.3",
   "license": "MIT",
   "main": "dist/index.js",
+  "description": "Stripe VAT id handling",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maielo/stripe-tax-utils.git"
+  },
   "engines": {
     "node": ">=10"
   },
