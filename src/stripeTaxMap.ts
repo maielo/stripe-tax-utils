@@ -21,6 +21,13 @@ export default [
     example: '123456789123',
   },
   {
+    country: 'BE',
+    type: 'eu_vat',
+    description: 'European VAT number',
+    regex: /^BE[0-9]{10}$/,
+    example: 'BE0123456789',
+  },
+  {
     country: 'BR',
     type: 'br_cnpj',
     description: 'Brazilian CNPJ number',
