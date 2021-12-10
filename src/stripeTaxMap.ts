@@ -110,7 +110,7 @@ export default [
     country: 'CZ',
     type: 'eu_vat',
     description: 'Czech Republic - European VAT number',
-    regex: /^CZ[0-9]{10}$/,
+    regex: /^CZ[0-9]{8,10}$/,
     example: 'CZ1234567890',
   },
   {
