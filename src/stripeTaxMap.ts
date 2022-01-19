@@ -28,6 +28,13 @@ export default [
     example: 'BE0123456789',
   },
   {
+    country: 'BG',
+    type: 'eu_vat',
+    description: 'Bulgaria - European VAT number',
+    regex: /^BG[0-9]{9,10}$/, // Prefix with zero ‘0’ if the customer provides a 9 digit VAT number
+    example: 'BG1234567890',
+  },
+  {
     country: 'BR',
     type: 'br_cnpj',
     description: 'Brazilian CNPJ number',
@@ -91,7 +98,6 @@ export default [
     regex: /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-K$/,
     example: '12.345.678-K',
   },
-
   {
     country: 'HR',
     type: 'eu_vat',
@@ -100,10 +106,17 @@ export default [
     example: 'HR12345678912',
   },
   {
+    country: 'AT',
+    type: 'eu_vat',
+    description: 'Austria - European VAT number',
+    regex: /^ATU[0-9]{7,9}$/,
+    example: 'ATU12345678',
+  },
+  {
     country: 'CY',
     type: 'eu_vat',
     description: 'Cyprus - European VAT number',
-    regex: /^CY[0-9]{8}Z$/,
+    regex: /^CY[0-9]{8}[A-Z]$/,
     example: 'CY12345678Z',
   },
   {
@@ -138,7 +151,7 @@ export default [
     country: 'FR',
     type: 'eu_vat',
     description: 'France - European VAT number',
-    regex: /^FRAB[0-9]{9}$/,
+    regex: /^FR[A-Z0-9]{9,11}$/, // made more forgiving - 11 characters May include alphabetical characters (any except O or I) as first or second or first and second characters. - FR + 12345678901 X1234567890 1X123456789 XX123456789
     example: 'FRAB123456789',
   },
   {
@@ -166,8 +179,8 @@ export default [
     country: 'HU',
     type: 'eu_vat',
     description: 'Hungary - European VAT number',
-    regex: /^HU[0-9]{11}$/,
-    example: 'HU12345678912',
+    regex: /^HU[0-9]{8,11}$/,
+    example: 'HU12345678',
   },
   {
     country: 'IN',
@@ -187,8 +200,8 @@ export default [
     country: 'IE',
     type: 'eu_vat',
     description: 'Ireland - European VAT number',
-    regex: /^IE[0-9]{7}[A-Z]{2}$/,
-    example: 'IE1234567AB',
+    regex: /^IE[0-9]{7}[A-Z]{1,2}$/, // 8 or 9 characters Includes one or two alphabetical characters (last, or second and last, or last 2) - 1234567WA (companies) 1234567FA (individuals)
+    example: 'IE1234567WA',
   },
   {
     country: 'IL',
@@ -248,7 +261,7 @@ export default [
     country: 'LT',
     type: 'eu_vat',
     description: 'Lithuania - European VAT number',
-    regex: /^LT[0-9]{12}$/,
+    regex: /^LT[0-9]{9,12}$/, // 9 or 12 characters
     example: 'LT123456789123',
   },
   {
@@ -301,7 +314,7 @@ export default [
     country: 'NL',
     type: 'eu_vat',
     description: 'Netherlands - European VAT number',
-    regex: /^NL[0-9]{9}B[0-9]{2}$/,
+    regex: /^NL[0-9]{9}B[0-9]{2}$/, // 12 characters. The 10th character is always B, Companies forming a VAT Group have the suffix BO2
     example: 'NL123456789B12',
   },
   {
@@ -315,7 +328,7 @@ export default [
     country: 'NO',
     type: 'no_vat',
     description: 'Norwegian VAT number',
-    regex: /^[0-9]{9}MVA$/,
+    regex: /^[0-9]{9}MVA$/, // 9 digits and the letters 'MVA' to indicate VAT registration, Last (ninth) digit is a MOD11 checksum digit.[20]
     example: '123456789MVA',
   },
 
@@ -346,7 +359,7 @@ export default [
     country: 'RU',
     type: 'ru_inn',
     description: 'Russian INN',
-    regex: /^[0-9]{10}$/,
+    regex: /^[0-9]{10,12}$/, // INN (ИНН) 10 digit code - legal entities, 12 digit code - people
     example: '1234567891',
   },
 
@@ -354,7 +367,7 @@ export default [
     country: 'RU',
     type: 'ru_kpp',
     description: 'Russian KPP',
-    regex: /^[0-9]{9}$/,
+    regex: /^[0-9]{9,13}$/, // OGRN (ОГРН)	9999999999999	13 digit code - people and legal entities
     example: '123456789',
   },
 
@@ -416,7 +429,7 @@ export default [
     country: 'ES',
     type: 'eu_vat',
     description: 'Spain - European VAT number',
-    regex: /^ESA[0-9]{7}Z$/,
+    regex: /^ES[A-Z0-9]{9}$/, // made it more forgiving - 9 characters Includes 1 or 2 alphabetical characters (first or last or first and last)
     example: 'ESA1234567Z',
   },
 
@@ -432,8 +445,10 @@ export default [
     country: 'CH',
     type: 'ch_vat',
     description: 'Switzerland - European VAT number',
-    regex: /^CHE-[0-9]{3}\.[0-9]{3}\.[0-9]{3}(\s)?MWST$/,
-    example: 'CHE-123.456.789 MWST',
+    //regex: /^CHE-[0-9]{3}\.[0-9]{3}\.[0-9]{3}(\s)?MWST$/,
+    //example: 'CHE-123.456.789 MWST',
+    regex: /^CHE[0-9]{9}(\s)(MWST|TVA|IVA)$/, // "CHE"+9 digits and the letters "TVA/MWST/IVA", which indicates VAT registration, e.g. CHE123456789 MWST.
+    example: 'CHE123456789 MWST',
   },
 
   {
