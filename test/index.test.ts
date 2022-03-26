@@ -68,4 +68,15 @@ describe('stripe tax utils', () => {
     const type = stripeTax.getTaxItem({ country: 'xxx', taxId: 'GB123456789' });
     expect(type).toBe(null);
   });
+
+  it('Should return when Romanian tax id length is 8 characters', () => {
+    const type = stripeTax.getTaxItem({ country: 'RO', taxId: 'RO12345678'});
+    expect(type).toStrictEqual({
+      country: 'RO',
+      type: 'eu_vat',
+      description: 'Romania - European VAT number',
+      regex: /^RO[0-9]{8,10}$/,
+      example: 'RO1234567891',
+    })
+  });
 });
