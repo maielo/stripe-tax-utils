@@ -186,7 +186,7 @@ export default [
     country: 'IN',
     type: 'in_gst',
     description: 'Indian GST number',
-    regex: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{4}$/,
+    regex: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z1-9]{4}$/,
     example: '12ABCDE3456FGZH',
   },
   {

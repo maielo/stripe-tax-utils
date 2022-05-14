@@ -1,4 +1,5 @@
 import stripeTax from '../src/index';
+import stripeTaxMap from '../src/stripeTaxMap';
 
 describe('stripe tax utils', () => {
   it('There should be no duplicate items', () => {
@@ -69,14 +70,20 @@ describe('stripe tax utils', () => {
     expect(type).toBe(null);
   });
 
+  it('Should pass for another valid Indian tax ID', () => {
+    const type = stripeTax.getTaxItem({
+      country: 'IN',
+      taxId: '00AHXPA1111L1ZP',
+    });
+    expect(type).toStrictEqual(
+      stripeTaxMap.find((x) => x.country === 'IN' && x.type === 'in_gst')
+    );
+  });
+
   it('Should return when Romanian tax id length is 8 characters', () => {
-    const type = stripeTax.getTaxItem({ country: 'RO', taxId: 'RO12345678'});
-    expect(type).toStrictEqual({
-      country: 'RO',
-      type: 'eu_vat',
-      description: 'Romania - European VAT number',
-      regex: /^RO[0-9]{8,10}$/,
-      example: 'RO1234567891',
-    })
+    const type = stripeTax.getTaxItem({ country: 'RO', taxId: 'RO12345678' });
+    expect(type).toStrictEqual(
+      stripeTaxMap.find((x) => x.country === 'RO' && x.type === 'eu_vat')
+    );
   });
 });
