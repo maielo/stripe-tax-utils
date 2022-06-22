@@ -351,7 +351,7 @@ export default [
     country: 'RO',
     type: 'eu_vat',
     description: 'Romania - European VAT number',
-    regex: /^RO[0-9]{8,10}$/,
+    regex: /^RO[0-9]+$/,
     example: 'RO1234567891',
   },
 
