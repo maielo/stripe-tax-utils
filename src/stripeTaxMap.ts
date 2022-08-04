@@ -383,14 +383,14 @@ export default [
     country: 'SG',
     type: 'sg_gst',
     description: 'Singaporean GST',
-    regex: /^M[0-9]{8}X$/,
+    regex: /^[a-zA-Z][0-9]{8}[a-zA-Z]$/,
     example: 'M12345678X',
   },
   {
     country: 'SG',
     type: 'sg_uen',
     description: 'Singaporean UEN',
-    regex: /^[0-9]{9}F$/,
+    regex: /^[0-9]{9}[a-zA-Z]$/,
     example: '123456789F',
   },
 

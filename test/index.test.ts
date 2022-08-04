@@ -86,4 +86,11 @@ describe('stripe tax utils', () => {
       stripeTaxMap.find((x) => x.country === 'RO' && x.type === 'eu_vat')
     );
   });
+
+  it('Should return when Singapur tax id length is 8 characters', () => {
+    const type = stripeTax.getTaxItem({ country: 'SG', taxId: '201918979D' });
+    expect(type).toStrictEqual(
+      stripeTaxMap.find((x) => x.country === 'SG' && x.type === 'sg_uen')
+    );
+  });
 });
