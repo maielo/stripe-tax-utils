@@ -93,4 +93,13 @@ describe('stripe tax utils', () => {
       stripeTaxMap.find((x) => x.country === 'SG' && x.type === 'sg_uen')
     );
   });
+
+  it('Should accept valid spain tax id', () => {
+    const ids = ['B09769092', 'A0976909B', '97690921C'];
+    for (const id of ids) {
+      expect(stripeTax.getTaxItem({ country: 'ES', taxId: id })).toEqual(
+        expect.objectContaining({ type: 'es_cif', country: 'ES' })
+      );
+    }
+  });
 });

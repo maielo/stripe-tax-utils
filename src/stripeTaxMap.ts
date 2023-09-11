@@ -421,7 +421,9 @@ export default [
     country: 'ES',
     type: 'es_cif',
     description: 'Spanish CIF number',
-    regex: /^A[0-9]{8}$/,
+    // https://www.avalara.com/vatlive/en/eu-vat-rules/eu-vat-number-registration/eu-vat-number-formats.html
+    // X12345678 or 12345678X or X1234567X (X stands for any letter)
+    regex: /^([A-Z][0-9]{8}|[A-Z][0-9]{7}[A-Z]|[0-9]{8}[A-Z])$/,
     example: 'A12345678',
   },
 
