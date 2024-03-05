@@ -45,7 +45,12 @@ describe('stripe tax utils', () => {
     const map = stripeTax.getMap();
 
     map.forEach((x) => {
-      expect(new RegExp(x.regex).test(x.example)).toBe(true);
+      try {
+        expect(new RegExp(x.regex).test(x.example)).toBe(true);
+      } catch (error) {
+        console.log(x);
+        throw error;
+      }
     });
   });
 
