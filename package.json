@@ -18,7 +18,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "np:publish": "git push origin master && np --no-2fa --no-tests",
+    "np:publish": "git push origin master && npx np --no-2fa --no-tests",
     "test": "npx tsdx test --watch",
     "lint": "tsdx lint && npm run fix:prettier",
     "prepare": "tsdx build",
