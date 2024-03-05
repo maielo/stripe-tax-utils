@@ -1,10 +1,24 @@
 export default [
   {
+    country: 'AD',
+    type: 'ad_nrt',
+    description: 'Andorran NRT number',
+    regex: /^A-[0-9]{6}-[A-Z]$/,
+    example: 'A-123456-Z',
+  },
+  {
     country: 'AE',
     type: 'ae_trn',
     description: 'United Arab Emirates TRN',
     regex: /^[0-9]{15}$/,
     example: '123456789012345',
+  },
+  {
+    country: 'AR',
+    type: 'ar_cuit',
+    description: 'Argentinian tax ID number',
+    regex: /^[0-9]{2}-[0-9]{7}-[0-9]{2}$/,
+    example: '12-3456789-01',
   },
   {
     country: 'AU',
@@ -29,10 +43,24 @@ export default [
   },
   {
     country: 'BG',
+    type: 'bg_uic',
+    description: 'Bulgaria Unified Identification Code',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
+  },
+  {
+    country: 'BG',
     type: 'eu_vat',
     description: 'Bulgaria - European VAT number',
     regex: /^BG[0-9]{9,10}$/, // Prefix with zero ‘0’ if the customer provides a 9 digit VAT number
     example: 'BG1234567890',
+  },
+  {
+    country: 'BO',
+    type: 'bo_tin',
+    description: 'Bolivian tax ID',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
   },
   {
     country: 'BR',
@@ -90,13 +118,61 @@ export default [
     regex: /^[0-9]{10}TQ[0-9]{4}$/,
     example: '1234567890TQ1234',
   },
-
   {
     country: 'CL',
     type: 'cl_tin',
     description: 'Chilean TIN',
     regex: /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-K$/,
     example: '12.345.678-K',
+  },
+  {
+    country: 'CN',
+    type: 'cn_tin',
+    description: 'Chinese tax ID',
+    regex: /^[0-9]{18}$/,
+    example: '123456789012345678',
+  },
+  {
+    country: 'CO',
+    type: 'co_nit',
+    description: 'Colombian NIT number',
+    regex: /^[0-9]{3}.[0-9]{3}-[0-9]{3}-[0-9]{1}$/,
+    example: '123.456.789-0',
+  },
+  {
+    country: 'CR',
+    type: 'cr_tin',
+    description: 'Costa Rican tax ID',
+    regex: /^[0-9]{1}-[0-9]{3}-[0-9]{6}$/,
+    example: '1-234-567890',
+  },
+  {
+    country: 'DO',
+    type: 'do_rcn',
+    description: 'Dominican RCN number',
+    regex: /^[0-9]{3}-[0-9]{7}-[0-9]{1}$/,
+    example: '123-4567890-1',
+  },
+  {
+    country: 'EC',
+    type: 'ec_ruc',
+    description: 'Ecuadorian RUC number',
+    regex: /^[0-9]{13}$/,
+    example: '1234567890001',
+  },
+  {
+    country: 'EG',
+    type: 'eg_tin',
+    description: 'Egyptian Tax Identification Number',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
+  },
+  {
+    country: 'EU',
+    type: 'eu_oss_vat',
+    description: 'European One Stop Shop VAT number for non-Union scheme',
+    regex: /^EU[0-9]{9}$/,
+    example: 'EU123456789',
   },
   {
     country: 'HR',
@@ -210,7 +286,6 @@ export default [
     regex: /^[0-9]{9}$/,
     example: '000012345',
   },
-
   {
     country: 'IT',
     type: 'eu_vat',
@@ -218,7 +293,6 @@ export default [
     regex: /^IT[0-9]{11}$/,
     example: 'IT12345678912',
   },
-
   {
     country: 'JP',
     type: 'jp_cn',
@@ -226,7 +300,6 @@ export default [
     regex: /^[0-9]{13}$/,
     example: '1234567891234',
   },
-
   {
     country: 'JP',
     type: 'jp_rn',
@@ -235,7 +308,6 @@ export default [
     regex: /^[0-9]{5}$/,
     example: '12345',
   },
-
   {
     country: 'KR',
     type: 'kr_brn',
@@ -346,7 +418,6 @@ export default [
     regex: /^PT[0-9]{9}$/,
     example: 'PT123456789',
   },
-
   {
     country: 'RO',
     type: 'eu_vat',
@@ -354,7 +425,6 @@ export default [
     regex: /^RO[0-9]+$/,
     example: 'RO1234567891',
   },
-
   {
     country: 'RU',
     type: 'ru_inn',
@@ -362,7 +432,6 @@ export default [
     regex: /^[0-9]{10,12}$/, // INN (ИНН) 10 digit code - legal entities, 12 digit code - people
     example: '1234567891',
   },
-
   {
     country: 'RU',
     type: 'ru_kpp',
@@ -370,7 +439,6 @@ export default [
     regex: /^[0-9]{9,13}$/, // OGRN (ОГРН)	9999999999999	13 digit code - people and legal entities
     example: '123456789',
   },
-
   {
     country: 'SA',
     type: 'sa_vat',
@@ -378,7 +446,6 @@ export default [
     regex: /^[0-9]{15}$/,
     example: '123456789012345',
   },
-
   {
     country: 'SG',
     type: 'sg_gst',
@@ -393,7 +460,6 @@ export default [
     regex: /^[0-9]{9}[a-zA-Z]$/,
     example: '123456789F',
   },
-
   {
     country: 'SK',
     type: 'eu_vat',
@@ -408,7 +474,6 @@ export default [
     regex: /^SI[0-9]{8}$/,
     example: 'SI12345678',
   },
-
   {
     country: 'ZA',
     type: 'za_vat',
@@ -416,7 +481,6 @@ export default [
     regex: /^4[0-9]{9}$/,
     example: '4123456789',
   },
-
   {
     country: 'ES',
     type: 'es_cif',
@@ -426,7 +490,6 @@ export default [
     regex: /^([A-Z][0-9]{8}|[A-Z][0-9]{7}[A-Z]|[0-9]{8}[A-Z])$/,
     example: 'A12345678',
   },
-
   {
     country: 'ES',
     type: 'eu_vat',
@@ -434,7 +497,6 @@ export default [
     regex: /^ES[A-Z0-9]{9}$/, // made it more forgiving - 9 characters Includes 1 or 2 alphabetical characters (first or last or first and last)
     example: 'ESA1234567Z',
   },
-
   {
     country: 'SE',
     type: 'eu_vat',
@@ -442,7 +504,6 @@ export default [
     regex: /^SE[0-9]{12}$/,
     example: 'SE123456789123',
   },
-
   {
     country: 'CH',
     type: 'ch_vat',
@@ -452,7 +513,6 @@ export default [
     regex: /^CHE[0-9]{9}(\s)(MWST|TVA|IVA)$/, // "CHE"+9 digits and the letters "TVA/MWST/IVA", which indicates VAT registration, e.g. CHE123456789 MWST.
     example: 'CHE123456789 MWST',
   },
-
   {
     country: 'TW',
     type: 'tw_vat',
@@ -460,7 +520,6 @@ export default [
     regex: /^[0-9]{8}$/,
     example: '12345678',
   },
-
   {
     country: 'TH',
     type: 'th_vat',
@@ -468,7 +527,6 @@ export default [
     regex: /^[0-9]{13}$/,
     example: '1234567891234',
   },
-
   {
     country: 'GB',
     type: 'gb_vat',
@@ -476,13 +534,124 @@ export default [
     regex: /^GB[0-9]{9}$/,
     example: 'GB123456789',
   },
-
+  {
+    country: 'GE',
+    type: 'ge_vat',
+    description: 'Georgian VAT',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
+  },
   {
     country: 'GB',
     type: 'eu_vat',
     description: 'Northern Ireland VAT number',
     regex: /^XI[0-9]{9}$/,
     example: 'XI123456789',
+  },
+  {
+    country: 'HU',
+    type: 'hu_tin',
+    description: 'Hungary tax number (adószám)',
+    regex: /^[0-9]{8}-[0-9]{1}-[0-9]{2}$/,
+    example: '12345678-1-23',
+  },
+  {
+    country: 'IS',
+    type: 'is_vat',
+    description: 'Icelandic VAT',
+    regex: /^[0-9]{6}$/,
+    example: '123456',
+  },
+  {
+    country: 'JP',
+    type: 'jp_trn',
+    description: 'Japanese Tax Registration Number (*Tōroku Bangō*)',
+    regex: /^T[0-9]{13}$/,
+    example: 'T1234567891234',
+  },
+  {
+    country: 'KE',
+    type: 'ke_pin',
+    description: 'Kenya Revenue Authority Personal Identification Number',
+    regex: /^P[0-9]{3}[0-9]{6}[A-Z]{1}$/,
+    example: 'P000111111A',
+  },
+  {
+    country: 'PE',
+    type: 'pe_ruc',
+    description: 'Peruvian RUC number',
+    regex: /^[0-9]{11}$/,
+    example: '12345678901',
+  },
+  {
+    country: 'PH',
+    type: 'ph_tin',
+    description: 'Philippines Tax Identification Number',
+    regex: /^[0-9]{12}$/,
+    example: '123456789012',
+  },
+  {
+    country: 'RO',
+    type: 'ro_tin',
+    description: 'Romanian tax ID number',
+    regex: /^[0-9]{13}$/,
+    example: '1234567890123',
+  },
+  {
+    country: 'RS',
+    type: 'rs_pib',
+    description: 'Serbian PIB number',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
+  },
+  {
+    country: 'SI',
+    type: 'si_tin',
+    description: 'Slovenia tax number (davčna številka)',
+    regex: /^[0-9]{8}$/,
+    example: '12345678',
+  },
+  {
+    country: 'SV',
+    type: 'sv_nit',
+    description: 'El Salvadorian NIT number',
+    regex: /^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]$/,
+    example: '1234-567890-123-4',
+  },
+  {
+    country: 'TR',
+    type: 'tr_tin',
+    description: 'Turkish Tax Identification Number',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
+  },
+  {
+    country: 'UA',
+    type: 'ua_vat',
+    description: 'Ukrainian VAT',
+    regex: /^[0-9]{9}$/,
+    example: '123456789',
+  },
+  {
+    country: 'UY',
+    type: 'uy_ruc',
+    description: 'Uruguayan RUC number',
+    regex: /^[0-9]{12}$/,
+    example: '123456789012',
+  },
+  {
+    country: 'VE',
+    type: 've_rif',
+    description: 'Venezuelan RIF number',
+    regex: /^A-[0-9]{8}-[0-9]{1}$/,
+    example: 'A-12345678-9',
+  },
+  {
+    country: 'VN',
+    type: 'vn_tin',
+    description: 'Vietnamese tax ID number',
+    regex: /^[0-9]{10}$/,
+    example: '1234567890',
   },
   {
     country: 'US',
