@@ -136,7 +136,7 @@ export default [
     country: 'CO',
     type: 'co_nit',
     description: 'Colombian NIT number',
-    regex: /^[0-9]{3}.[0-9]{3}-[0-9]{3}-[0-9]{1}$/,
+    regex: /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{1}$/,
     example: '123.456.789-0',
   },
   {
