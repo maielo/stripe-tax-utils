@@ -1,5 +1,5 @@
 {
-  "version": "1.0.12",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "description": "Stripe VAT id handling",
@@ -15,10 +15,13 @@
   "engines": {
     "node": ">=10"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "np:publish": "git push origin master && npx np --no-2fa --no-tests",
+    "np:publish": "git push origin master && npx np@latest",
     "test": "npx tsdx test --watch",
     "lint": "tsdx lint && npm run fix:prettier",
     "prepare": "tsdx build",
