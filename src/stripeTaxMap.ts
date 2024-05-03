@@ -643,8 +643,8 @@ export default [
     country: 'VE',
     type: 've_rif',
     description: 'Venezuelan RIF number',
-    regex: /^A-[0-9]{8}-[0-9]{1}$/,
-    example: 'A-12345678-9',
+    regex: /^[E|I|J|V]-[0-9]{8}-[0-9]{1}$/,
+    example: 'E-12345678-9',
   },
   {
     country: 'VN',
