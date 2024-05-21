@@ -107,4 +107,13 @@ describe('stripe tax utils', () => {
       );
     }
   });
+
+  it('Should accept valid Switzerland tax id', () => {
+    const ids = ['CHE-123.456.789 MWST'];
+    for (const id of ids) {
+      expect(stripeTax.getTaxItem({ country: 'CH', taxId: id })).toEqual(
+        expect.objectContaining({ type: 'ch_vat', country: 'CH' })
+      );
+    }
+  });
 });
