@@ -508,10 +508,8 @@ export default [
     country: 'CH',
     type: 'ch_vat',
     description: 'Switzerland - European VAT number',
-    //regex: /^CHE-[0-9]{3}\.[0-9]{3}\.[0-9]{3}(\s)?MWST$/,
-    //example: 'CHE-123.456.789 MWST',
-    regex: /^CHE[0-9]{9}(\s)(MWST|TVA|IVA)$/, // "CHE"+9 digits and the letters "TVA/MWST/IVA", which indicates VAT registration, e.g. CHE123456789 MWST.
-    example: 'CHE123456789 MWST',
+    regex: /^CHE-[0-9]{3}.[0-9]{3}.[0-9]{3}(\s)(MWST|TVA|IVA)$/,
+    example: 'CHE-123.456.789 MWST',
   },
   {
     country: 'TW',
