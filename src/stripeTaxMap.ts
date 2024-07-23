@@ -378,7 +378,7 @@ export default [
     country: 'MX',
     type: 'mx_rfc',
     description: 'Mexican RFC number',
-    regex: /^[A-Z]{3}[0-9]{6}[A-Z]{2}[0-9]{1}$/,
+    regex: /^[A-Z]?[A-Z]{3}[0-9]{6}[0-9A-Z]{2}[0-9A-Z]?$/,
     example: 'ABC010203AB9',
   },
 
