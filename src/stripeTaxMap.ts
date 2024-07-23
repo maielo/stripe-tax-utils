@@ -122,7 +122,7 @@ export default [
     country: 'CL',
     type: 'cl_tin',
     description: 'Chilean TIN',
-    regex: /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-K$/,
+    regex: /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-[0-9A-Z]$/,
     example: '12.345.678-K',
   },
   {
