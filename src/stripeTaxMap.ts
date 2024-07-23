@@ -17,7 +17,7 @@ export default [
     country: 'AR',
     type: 'ar_cuit',
     description: 'Argentinian tax ID number',
-    regex: /^[0-9]{2}-[0-9]{8}-[0-9]{2}$/,
+    regex: /^[0-9]{2}-[0-9]{8}-[0-9]{1}$/,
     example: '12-3456789-01',
   },
   {
