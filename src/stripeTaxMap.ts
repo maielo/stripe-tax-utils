@@ -620,7 +620,7 @@ export default [
     country: 'TR',
     type: 'tr_tin',
     description: 'Turkish Tax Identification Number',
-    regex: /^[0-9]{9}$/,
+    regex: /^[0-9]{10}$/,
     example: '123456789',
   },
   {
