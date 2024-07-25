@@ -17,7 +17,7 @@ export default [
     country: 'AR',
     type: 'ar_cuit',
     description: 'Argentinian tax ID number',
-    regex: /^[0-9]{2}-[0-9]{7}-[0-9]{2}$/,
+    regex: /^[0-9]{2}-[0-9]{8}-[0-9]{1}$/,
     example: '12-3456789-01',
   },
   {
@@ -122,7 +122,7 @@ export default [
     country: 'CL',
     type: 'cl_tin',
     description: 'Chilean TIN',
-    regex: /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-K$/,
+    regex: /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-[0-9A-Z]$/,
     example: '12.345.678-K',
   },
   {
@@ -621,7 +621,7 @@ export default [
     country: 'TR',
     type: 'tr_tin',
     description: 'Turkish Tax Identification Number',
-    regex: /^[0-9]{9}$/,
+    regex: /^[0-9]{10}$/,
     example: '123456789',
   },
   {
