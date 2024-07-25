@@ -378,7 +378,8 @@ export default [
     country: 'MX',
     type: 'mx_rfc',
     description: 'Mexican RFC number',
-    regex: /^[A-Z]?[A-Z]{3}[0-9]{6}[0-9A-Z]{2}[0-9A-Z]?$/,
+    // https://learn.sayari.com/mexico-tax-id-number-rfc/
+    regex: /^[A-Z]{4}[0-9]{6}[A-Z0-9]{3}$/,
     example: 'ABC010203AB9',
   },
 
